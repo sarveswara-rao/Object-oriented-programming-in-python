@@ -12,12 +12,33 @@ class Dog:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        
     # adding a new method (aka its function)
     def bark(self):
         print('who is that!!, bow! bow! bow!!!!')
         
+    # method for doginfo
+    def doginfo(self):
+        print(f"{self.name} is {self.age} year(s) old.")
+    
+    # birthday method adds one year to dog's age
+    def birthday(self):
+        print(f'\nHappy Birthday {self.name}.', end=' Now, ')
+        self.age += 1
+        # now call the doginfo to see the changes
+        self.doginfo()
+        
 # instantiating the class to create a oz object
-oz = Dog("chunnu", 2)
-print(oz)
-print(f"\n{oz.name} is {oz.age} year(s) old.")
-oz.bark()
+ch = Dog("chinnu", 2)
+tom = Dog('Tommy', 3)
+mc = Dog('Michael', 4)
+
+# calling the each object's info method using dot
+ch.doginfo()
+tom.doginfo()
+mc.doginfo()
+
+# Omg, today is chinnu birthday
+ch.birthday()
+
+tom.birthday()
