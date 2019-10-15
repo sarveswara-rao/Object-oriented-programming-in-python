@@ -28,6 +28,10 @@ class Dog:
         # now call the doginfo to see the changes
         self.doginfo()
         
+    def setBuddy(self, buddy):
+        self.buddy = buddy
+        buddy.buddy = self
+    
 # instantiating the class to create a oz object
 ch = Dog("chinnu", 2)
 tom = Dog('Tommy', 3)
@@ -42,3 +46,11 @@ mc.doginfo()
 ch.birthday()
 
 tom.birthday()
+
+# set chinny buddy as tommy
+ch.setBuddy(tom)
+# print chinnu buddy age and name
+print('\n', ch.buddy.age, ch.buddy.name)
+print('\n', tom.buddy.age, tom.buddy.name)
+
+ch.buddy.doginfo()
